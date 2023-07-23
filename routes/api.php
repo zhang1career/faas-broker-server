@@ -20,11 +20,11 @@ use App\Http\Controllers\MerchandiseController;
 //    return $request->user();
 //});
 
-Route::get('merchandises',          function () {
+Route::get('/merchandises',          function () {
     echo "hello";
 });
-Route::get('merchandises/{id}',     'getOne');
-Route::post('merchandises',         'create');
-Route::put('merchandises/{id}',     'update');
-Route::delete('merchandises/{id}',  'delete');
+//Route::get('/merchandises/{id}',     'getOne');
+//Route::post('/merchandises',         'create');
+//Route::put('/merchandises/{id}',     'update');
+//Route::delete('/merchandises/{id}',  'delete');
 
