@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\MerchandiseController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,12 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
-Route::get('merchandises',          'MerchandiseController@getAll');
-Route::get('merchandises/{id}',     'MerchandiseController@getOne');
-Route::post('merchandises',         'MerchandiseController@create');
-Route::put('merchandises/{id}',     'MerchandiseController@update');
-Route::delete('merchandises/{id}',  'MerchandiseController@delete');
+Route::get('merchandises',          function () {
+    return 'hello';
+});
+//Route::get('api/merchandises/{id}', 'MerchandiseController@getOne');
+//Route::post('merchandises',         'MerchandiseController@create');
+//Route::put('merchandises/{id}',     'MerchandiseController@update');
+//Route::delete('merchandises/{id}',  'MerchandiseController@delete');
