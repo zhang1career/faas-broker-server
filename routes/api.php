@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('merchandises',          'MerchandiseController@getAll');
+Route::get('merchandises/{id}',     'MerchandiseController@getOne');
+Route::post('merchandises',         'MerchandiseController@create');
+Route::put('merchandises/{id}',     'MerchandiseController@update');
+Route::delete('merchandises/{id}',  'MerchandiseController@delete');

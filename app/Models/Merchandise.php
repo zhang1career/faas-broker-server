@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Merchandise extends Model
 {
     use HasFactory;
+
+    protected array $fillable = [
+        'name',
+        'description',
+        'url',
+        'token',
+        'field_info',
+        'suppiler_id',
+    ];
 }
