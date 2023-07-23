@@ -8,7 +8,7 @@ class Merchandise extends Model
 {
     public $timestamps = false;
 
-    protected array $fillable = [
+    protected $fillable = [
         'name',
         'description',
         'url',
