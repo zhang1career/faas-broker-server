@@ -20,10 +20,10 @@ use App\Http\Controllers\MerchandiseController;
 //    return $request->user();
 //});
 
-Route::get('merchandises',          function () {
-    return 'hello';
+Route::controller(MerchandiseController::class)->group(function () {
+    Route::get('merchandises',          'getAll');
+    Route::get('merchandises/{id}',     'getOne');
+    Route::post('merchandises',         'create');
+    Route::put('merchandises/{id}',     'update');
+    Route::delete('merchandises/{id}',  'delete');
 });
-//Route::get('api/merchandises/{id}', 'MerchandiseController@getOne');
-//Route::post('merchandises',         'MerchandiseController@create');
-//Route::put('merchandises/{id}',     'MerchandiseController@update');
-//Route::delete('merchandises/{id}',  'MerchandiseController@delete');
