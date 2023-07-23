@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Merchandise extends Model
 {
+    public $timestamps = false;
+
     protected array $fillable = [
         'name',
         'description',
