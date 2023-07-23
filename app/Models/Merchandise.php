@@ -13,7 +13,7 @@ class Merchandise extends Model
         'description',
         'url',
         'token',
-        'field_info',
+        'field_rule',
         'suppiler_id',
     ];
 }
