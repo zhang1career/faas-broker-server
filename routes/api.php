@@ -21,8 +21,8 @@ use App\Http\Controllers\MerchandiseController;
 //});
 
 Route::get('/merchandises',          [MerchandiseController::class, 'getAll']);
-//Route::get('/merchandises/{id}',     'getOne');
-//Route::post('/merchandises',         'create');
-//Route::put('/merchandises/{id}',     'update');
-//Route::delete('/merchandises/{id}',  'delete');
+Route::get('/merchandises/{id}',     [MerchandiseController::class, 'getOne']);
+Route::post('/merchandises',         [MerchandiseController::class, 'create']);
+Route::put('/merchandises/{id}',     [MerchandiseController::class, 'update']);
+Route::delete('/merchandises/{id}',  [MerchandiseController::class, 'delete']);
 
