@@ -19,13 +19,6 @@ class MerchandiseController extends Controller
         return $ret;
     }
 
-
-    public function getOne($id)
-    {
-        return Merchandise::find($id);
-    }
-
-
     private function buildBrief(Merchandise $merchandise) : array
     {
         return [
@@ -35,6 +28,24 @@ class MerchandiseController extends Controller
             'supplier_id'   => $merchandise->supplier_id,
         ];
     }
+
+
+    public function getOne($id)
+    {
+        return Merchandise::find($id);
+    }
+
+    private function buildDetail(Merchandise $merchandise) : array
+    {
+        return [
+            'id'            => $merchandise->id,
+            'name'          => $merchandise->name,
+            'description'   => $merchandise->description,
+            'supplier_id'   => $merchandise->supplier_id,
+            'access'        => $merchandise->merchandiseAccess(),
+        ];
+    }
+
 
     public function create(Request $request)
     {
