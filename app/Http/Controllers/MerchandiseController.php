@@ -12,7 +12,7 @@ class MerchandiseController extends Controller
     {
         return Merchandise::getList();
     }
-    
+
 
     public function getOne($id)
     {

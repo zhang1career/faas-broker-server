@@ -15,6 +15,7 @@ class Merchandise extends BaseModel
         'suppiler_id',
     ];
 
+
     public static function getList()
     {
         $merchandise = DB::table('merchandise')
@@ -27,10 +28,10 @@ class Merchandise extends BaseModel
 
     public static function getOne($id)
     {
-        $merchandise = DB::table('merchandise')
-            ->join('merchandise_access', 'merchandise.id', '=', 'merchandise_access.merch_id')
-            ->select('merchandise.*', 'merchandise_access.url', 'merchandise_access.token', 'merchandise_access.field_rule')
-            ->where('merchandise.id', $id)
+        $merchandise = DB::table('merchandise as m')
+            ->join('merchandise_access as ma', 'm.id', '=', 'ma.merch_id')
+            ->select('m.*', 'ma.url', 'ma.token', 'ma.field_rule')
+            ->where('m.id', $id)
             ->first();
 
         return $merchandise;
