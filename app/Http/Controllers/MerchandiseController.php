@@ -30,7 +30,7 @@ class MerchandiseController extends Controller
         $param['create_time'] = $now;
         $param['update_time'] = $now;
 
-        return Merchandise::create();
+        return Merchandise::create($param);
     }
 
 
