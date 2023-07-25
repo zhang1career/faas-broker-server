@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Log;
 class MerchandiseController extends Controller
 {
 
+    /**
+     * @var MerchandiseService
+     */
     private MerchandiseService $merchandiseService;
 
 
