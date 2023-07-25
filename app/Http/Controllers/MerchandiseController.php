@@ -39,7 +39,7 @@ class MerchandiseController extends Controller
         $param = $request->all();
         Log::info('[create] param:' . json_encode($param));
 
-        return $this->merchandiseService.create($param);
+        return $this->merchandiseService->create($param);
     }
 
 
