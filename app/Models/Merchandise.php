@@ -19,7 +19,7 @@ class Merchandise extends BaseModel
     {
         $merchandise = DB::table('merchandise')
             ->join('merchandise_access', 'merchandise.id', '=', 'merchandise_access.merch_id')
-            ->select('users.*', 'merchandise_access.url', 'merchandise_access.token', 'merchandise_access.field_rule')
+            ->select('merchandise.*', 'merchandise_access.url', 'merchandise_access.token', 'merchandise_access.field_rule')
             ->where('merchandise.id', $id)
             ->first();
 
