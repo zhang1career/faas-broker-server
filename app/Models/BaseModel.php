@@ -4,9 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BaseModel extends Model
+abstract class BaseModel extends Model
 {
-    //删除s
+
+    /**
+     * 重载表名getter
+     * 删除表名后缀s
+     *
+     * @return false|string
+     */
     public function getTable()
     {
         $table = parent::getTable();
