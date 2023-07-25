@@ -3,11 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Merchandise;
+use App\Services\MerchandiseService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class MerchandiseController extends Controller
 {
+
+    private MerchandiseService $merchandiseService;
+
+
+    public function __construct(MerchandiseService $merchandiseService)
+    {
+        $this->merchandiseService = $merchandiseService;
+    }
+
 
     public function getAll()
     {
@@ -26,11 +36,7 @@ class MerchandiseController extends Controller
         $param = $request->all();
         Log::info('[create] param:' . json_encode($param));
 
-        $now = time();
-        $param['create_time'] = $now;
-        $param['update_time'] = $now;
-
-        return Merchandise::create($param);
+        return $this->merchandiseService.create($param);
     }
 
 
