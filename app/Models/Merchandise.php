@@ -18,7 +18,6 @@ class Merchandise extends BaseModel
     public function getOne($id)
     {
         $merchandise = DB::table('merchandise')
-            ->select('*')
             ->join('merchandise_access', 'merchandise.id', '=', 'merchandise_access.merch_id')
             ->select('users.*', 'merchandise_access.url', 'merchandise_access.token', 'merchandise_access.field_rule')
             ->where('merchandise.id', $id)
