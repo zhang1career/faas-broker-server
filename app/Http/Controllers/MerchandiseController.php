@@ -29,9 +29,9 @@ class MerchandiseController extends Controller
     private function buildBrief(Merchandise $merchandise) : array
     {
         return [
-            'name' => $merchandise->name,
-            'description' => $merchandise->description,
-            'supplier' => $merchandise->suppiler(),
+            'name'          => $merchandise->name,
+            'description'   => $merchandise->description,
+            'supplier'      => $merchandise->supplier(),
         ];
     }
 
