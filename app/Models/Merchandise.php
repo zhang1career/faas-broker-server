@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
 
 class Merchandise extends BaseModel
 {
@@ -14,14 +15,15 @@ class Merchandise extends BaseModel
         'suppiler_id',
     ];
 
-    public function merchandiseAccess()
+    public function getOne($id)
     {
-        return $this->hasOne('App\Models\MerchandiseAccess', 'id', 'merch_id');
-    }
+        $merchandise = DB::table('merchandise')
+            ->select('*')
+            ->join('merchandise_access', 'merchandise.id', '=', 'merchandise_access.merch_id')
+            ->select('users.*', 'merchandise_access.url', 'merchandise_access.token', 'merchandise_access.field_rule')
+            ->where('merchandise.id', $id)
+            ->first();
 
-    public function supplier()
-    {
-        return $this->belongsTo('App\Models\Merchant', 'supplier_id', 'id');
+        return $merchandise;
     }
-
 }

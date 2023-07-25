@@ -32,19 +32,7 @@ class MerchandiseController extends Controller
 
     public function getOne($id)
     {
-        $merchandise = Merchandise::find($id);
-        return $this->buildDetail($merchandise);
-    }
-
-    private function buildDetail(Merchandise $merchandise) : array
-    {
-        return [
-            'id'            => $merchandise->id,
-            'name'          => $merchandise->name,
-            'description'   => $merchandise->description,
-            'supplier_id'   => $merchandise->supplier_id,
-            'access'        => $merchandise->merchandiseAccess(),
-        ];
+        return Merchandise::getOne($id);
     }
 
 
