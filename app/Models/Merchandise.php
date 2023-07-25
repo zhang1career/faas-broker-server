@@ -15,7 +15,7 @@ class Merchandise extends Model
     protected $fillable = [
         'name',
         'description',
-        'suppiler_id',
+        'supplier_id',
     ];
 
 

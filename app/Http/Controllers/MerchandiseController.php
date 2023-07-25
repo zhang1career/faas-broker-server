@@ -10,8 +10,7 @@ class MerchandiseController extends Controller
 
     public function getAll()
     {
-        return Merchandise::getList()
-            ->toArray();
+        return Merchandise::getList();
     }
 
 
