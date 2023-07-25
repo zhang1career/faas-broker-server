@@ -4,13 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Merchandise extends BaseModel
+class Merchant extends BaseModel
 {
     public $timestamps = false;
-    
+
     protected $fillable = [
-        'url',
-        'token',
-        'field_rule',
+        'name',
     ];
 }

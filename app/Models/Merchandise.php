@@ -13,4 +13,15 @@ class Merchandise extends BaseModel
         'description',
         'suppiler_id',
     ];
+
+    public function merchandiseAccess()
+    {
+        return $this->hasOne('App\Models\MerchandiseAccess', 'merch_id', 'id');
+    }
+
+    public function suppiler()
+    {
+        return $this->belongsTo('App\Models\Merchant', 'suppiler_id', 'id');
+    }
+
 }
