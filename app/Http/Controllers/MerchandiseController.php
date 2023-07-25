@@ -24,12 +24,12 @@ class MerchandiseController extends Controller
     public function create(Request $request)
     {
         $param = $request->all();
-        Log::info('[create] param:' . $param);
+        Log::info('[create] param:' . json_encode($param));
 
         $now = time();
         $param['create_time'] = $now;
         $param['update_time'] = $now;
-        
+
         return Merchandise::create();
     }
 
