@@ -3,7 +3,7 @@
 namespace App\Services\impl;
 
 use App\Models\Merchandise;
-use \App\Services\MerchandiseService;
+use App\Services\MerchandiseService;
 
 class MerchandiseServiceImpl implements MerchandiseService
 {
