@@ -15,6 +15,16 @@ class Merchandise extends BaseModel
         'suppiler_id',
     ];
 
+    public static function getList()
+    {
+        $merchandise = DB::table('merchandise')
+            ->join('merchant', 'merchandise.supplier_id', '=', 'merchant.id')
+            ->select('merchandise.*', 'merchant.name as supplier')
+            ->get();
+
+        return $merchandise;
+    }
+
     public static function getOne($id)
     {
         $merchandise = DB::table('merchandise')
