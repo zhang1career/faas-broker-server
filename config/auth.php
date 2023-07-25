@@ -18,6 +18,10 @@ return [
         'passwords' => 'users',
     ],
 
+    'api_sign' => [
+        'secret_key' => env('API_SIGN_SECRET_KEY', ''),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards

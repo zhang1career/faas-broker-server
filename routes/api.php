@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Middleware\VerifyApiSign;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MerchandiseController;
@@ -22,7 +22,6 @@ use App\Http\Controllers\MerchandiseController;
 
 Route::get('/merchandises',          [MerchandiseController::class, 'getAll']);
 Route::get('/merchandises/{id}',     [MerchandiseController::class, 'getOne']);
-Route::post('/merchandises',         [MerchandiseController::class, 'create']);
+Route::post('/merchandises',         [MerchandiseController::class, 'create']);//->middleware(VerifyApiSign::class);
 Route::put('/merchandises/{id}',     [MerchandiseController::class, 'update']);
 Route::delete('/merchandises/{id}',  [MerchandiseController::class, 'delete']);
-
