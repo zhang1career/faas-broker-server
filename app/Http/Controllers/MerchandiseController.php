@@ -32,7 +32,7 @@ class MerchandiseController extends Controller
             'id'            => $merchandise->id,
             'name'          => $merchandise->name,
             'description'   => $merchandise->description,
-            'supplier'      => $merchandise->supplier(),
+            'supplier_id'   => $merchandise->supplier_id,
         ];
     }
 

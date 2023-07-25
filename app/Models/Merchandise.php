@@ -16,7 +16,7 @@ class Merchandise extends BaseModel
 
     public function merchandiseAccess()
     {
-        return $this->hasOne('App\Models\MerchandiseAccess', 'merch_id', 'id');
+        return $this->hasOne('App\Models\MerchandiseAccess', 'id', 'merch_id');
     }
 
     public function supplier()
