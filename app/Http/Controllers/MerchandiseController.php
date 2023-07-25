@@ -10,7 +10,13 @@ class MerchandiseController extends Controller
 
     public function getAll()
     {
-        return Merchandise::all();
+        $merchandiseList = Merchandise::all();
+        $ret = [];
+        foreach ($merchandiseList as $merchandise) {
+            $ret += $this->buildBrief($merchandise);
+        }
+
+        return $ret;
     }
 
 
@@ -19,6 +25,15 @@ class MerchandiseController extends Controller
         return Merchandise::find($id);
     }
 
+
+    private function buildBrief(Merchandise $merchandise) : array
+    {
+        return [
+            'name' => $merchandise->name,
+            'description' => $merchandise->description,
+            'supplier' => $merchandise->suppiler(),
+        ];
+    }
 
     public function create(Request $request)
     {
