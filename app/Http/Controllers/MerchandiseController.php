@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Merchandise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class MerchandiseController extends Controller
 {
@@ -22,7 +23,14 @@ class MerchandiseController extends Controller
 
     public function create(Request $request)
     {
-        return Merchandise::create($request->all());
+        $param = $request->all();
+        Log::info('[create] param:' . $param);
+
+        $now = time();
+        $param['create_time'] = $now;
+        $param['update_time'] = $now;
+        
+        return Merchandise::create();
     }
 
 

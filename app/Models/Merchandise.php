@@ -16,6 +16,8 @@ class Merchandise extends Model
         'name',
         'description',
         'supplier_id',
+        'create_time',
+        'update_time'
     ];
 
 
