@@ -15,7 +15,7 @@ class Merchandise extends BaseModel
         'suppiler_id',
     ];
 
-    public function getOne($id)
+    public static function getOne($id)
     {
         $merchandise = DB::table('merchandise')
             ->join('merchandise_access', 'merchandise.id', '=', 'merchandise_access.merch_id')
